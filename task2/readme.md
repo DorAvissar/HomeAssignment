@@ -40,7 +40,8 @@ SMTP stands for Simple Mail Transfer Protocol. It is a protocol used for sending
 Python: Make sure you have Python installed on your system.
 Install Required Libraries: You need to install the psutil and python-dotenv libraries if you haven't already. You can do this using pip:
 ```
-pip install psutil python-dotenv
+pip install psutil 
+pip install python-dotenv
 ```
 
 ### Step 1: Create a .env File
