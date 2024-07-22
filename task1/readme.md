@@ -1,17 +1,6 @@
 # Step 4: Documentation
-
-Setup RabbitMQ Using Docker:
-
-```
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-```
-
-Install Python Dependencies:
-In this task we're going to use Pika 1.0.0, which is the Python client recommended by the RabbitMQ team. To install it you can use the pip package management tool:
-```
-pip install pika
-```
-## Sending
+## Code Explanation: 
+### Sending
 Our first program send.py will send messages to the queue. The first thing we need to do is to establish a connection with RabbitMQ server.
 ```
 import pika
@@ -47,7 +36,7 @@ Before exiting the program we need to make sure the network buffers were flushed
 connection.close()
 ```
 
-## Receiving
+### Receiving
 
 Our second program receive.py will receive messages from the queue and print them on the screen.
 
@@ -85,13 +74,14 @@ if __name__ == '__main__':
             os._exit(0)
 
 ```
-
-Now we can try out our programs in a terminal. 
-First,
-Setup RabbitMQ Using Docker:
+# how to run the code? 
+First, Setup RabbitMQ Using Docker and Install Python Dependencies in the terminal:
+:
 
 ```
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+pip install pika
 ```
 
 Second - start a consumer, which will run continuously waiting for deliveries:
