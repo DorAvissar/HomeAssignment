@@ -31,7 +31,38 @@
         It connects to the Gmail SMTP server, logs in using the provided credentials, and sends the email.
 
 
-https://support.google.com/mail/answer/185833?hl=en - to generate an app-specific password
 
 ## What is an SMTP Server?
 SMTP stands for Simple Mail Transfer Protocol. It is a protocol used for sending email messages between servers. Most email systems that send mail over the Internet use SMTP to send messages from one server to another. The messages can then be retrieved with an email client using either POP (Post Office Protocol) or IMAP (Internet Message Access Protocol).
+
+# How to run it? 
+## Prerequisites
+Python: Make sure you have Python installed on your system.
+Install Required Libraries: You need to install the psutil and python-dotenv libraries if you haven't already. You can do this using pip:
+```
+pip install psutil python-dotenv
+```
+
+### Step 1: Create a .env File
+Create a .env file in the same directory as your script. This file will store your email credentials. Add the following lines to the .env file:
+do not uplode this file to git ! 
+
+```
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_password
+```
+
+Replace your_email@gmail.com with your actual email address and your_password with your actual email password or an app-specific password if you are using Gmail with two-factor authentication.
+https://support.google.com/mail/answer/185833?hl=en - to generate an app-specific password
+
+### Step 2: Save the Script
+Save your Python script in the same directory as your .env file.
+
+### Step 3: Run the Script
+Open a terminal or command prompt and navigate to the directory where your script is saved. You can then run the script using Python:
+```
+python cpu_monitor.py
+```
+
+### Step 4: overload the cpu to check your code (use the CPULoad.py)
+
