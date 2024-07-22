@@ -1,0 +1,33 @@
+IMPORT required libraries
+
+LOAD environment variables from .env file
+
+DEFINE FUNCTION email_alert(subject, body, to):
+    CREATE email message object
+    SET email content
+    SET email subject
+    SET email recipient
+    GET user from environment variables
+    SET email sender
+    GET password from environment variables
+    CONNECT to SMTP server
+    START TLS for security
+    LOGIN to SMTP server with user and password
+    SEND email message
+    DISCONNECT from SMTP server
+
+DEFINE FUNCTION cpu_monitor():
+    SET alert_sent to False
+    LOOP FOREVER:
+        GET current CPU usage
+        IF CPU usage > 80 AND alert_sent is False:
+            CALL email_alert with appropriate message
+            PRINT "alert was sent"
+            SET alert_sent to True
+            SLEEP for 10 seconds
+        ELSE IF CPU usage <= 80:
+            SET alert_sent to False
+            PRINT current CPU usage
+            SLEEP for 5 seconds
+
+
